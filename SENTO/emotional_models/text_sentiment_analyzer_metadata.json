@@ -1,0 +1,18 @@
+{
+  "model_type": "LogisticRegression",
+  "classes": [
+    "positive",
+    "negative",
+    "neutral"
+  ],
+  "n_features": 4,
+  "feature_names": [
+    "word_count",
+    "vader_compound",
+    "textblob_polarity",
+    "readability_score"
+  ],
+  "accuracy_estimate": 0.7,
+  "created_at": "2024-01-01T00:00:00",
+  "note": "Placeholder model with correct feature dimensions"
+}

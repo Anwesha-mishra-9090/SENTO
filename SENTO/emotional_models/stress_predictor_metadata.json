@@ -1,0 +1,20 @@
+{
+  "model_type": "RandomForestRegressor",
+  "task": "regression",
+  "target_range": [
+    0,
+    1
+  ],
+  "n_features": 6,
+  "feature_names": [
+    "temporal_mean",
+    "temporal_std",
+    "emotional_volatility",
+    "emotion_value",
+    "emotional_intensity",
+    "emotional_valence"
+  ],
+  "r2_estimate": 0.6,
+  "created_at": "2024-01-01T00:00:00",
+  "note": "Placeholder stress prediction model with correct feature dimensions"
+}
