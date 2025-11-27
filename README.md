@@ -49,36 +49,39 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 Access Your Dashboard
 Open your browser and go to: http://localhost:8000
 
-SENTIO/
-├── 📊 core/                 # Core processing engines
-│   ├── emotion_orchestrator.py
-│   └── context_analyzer.py
-├── 🎤 voice_analysis/       # Audio processing
-│   ├── feature_extraction.py
-│   ├── real_time_processor.py
-│   └── emotion_classifier.py
-├── 📝 text_analysis/        # NLP processing
-│   ├── sentiment_analyzer.py
-│   └── nlp_processor.py
-├── 🤖 ml_models/           # Machine learning
-│   ├── model_manager.py
-│   ├── model_serving.py
-│   └── feature_engineering.py
-├── 📈 analytics_engine/    # Data analysis
-│   └── timeline_generator.py
-├── 💬 ai_coach/            # Coaching system
-│   └── coaching_engine.py
-├── 🗄️ data_layer/          # Data management
-│   └── time_series_db.py
-├── 🌐 interfaces/          # User interfaces
-│   ├── api_gateway.py
-│   ├── web_dashboard.py
-│   ├── voice_interface.py
-│   └── mobile_integration.py
-└── 🔧 utils/               # Utilities
-    └── circular_buffer.py
+        SENTIO/
+           ├── 📊 core/                 # Core processing engines
+           │   ├── emotion_orchestrator.py
+           │   └── context_analyzer.py
+            ├── 🎤 voice_analysis/       # Audio processing
+           │   ├── feature_extraction.py
+           │   ├── real_time_processor.py
+           │   └── emotion_classifier.py
+         ├── 📝 text_analysis/        # NLP processing
+         │   ├── sentiment_analyzer.py
+         │   └── nlp_processor.py
+          ├── 🤖 ml_models/           # Machine learning
+         │   ├── model_manager.py
+         │   ├── model_serving.py
+         │   ├── model_serving.py
+         │   └── feature_engineering.py
+         ├── 📈 analytics_engine/    # Data analysis
+          │   └── timeline_generator.py
+          ├── 💬 ai_coach/            # Coaching system
+           │   └── coaching_engine.py
+          ├── 🗄️ data_layer/          # Data management
+          │   └── time_series_db.py
+         ├── 🌐 interfaces/          # User interfaces
+        │   ├── api_gateway.py
+        │   ├── web_dashboard.py
+        │   ├── voice_interface.py
+        │   └── mobile_integration.py
+         └── 🔧 utils/               # Utilities
+         └── circular_buffer.py
+
 
     🔌 API Documentation
+   
            Base URL
                  http://localhost:5000
        Key Endpoints
@@ -88,19 +91,22 @@ SENTIO/
 
                  Body: audio_file (WAV/MP3)
                 Response: { "emotion": "happy", "confidence": 0.85, "intensity": 1.5 }
-        Text Sentiment
+Text Sentiment
+
                POST /api/analyze-text
                 Content-Type: application/json
 
                 Body: { "text": "I'm feeling great today!" }
               Response: { "sentiment": "positive", "emotion": "happy", "confidence": 0.78 }
-        Stress Prediction
+Stress Prediction
+
              POST /api/predict-stress
              Content-Type: application/json
 
              Body: { "features": { "emotional_volatility": 0.3, ... } }
              Response: { "stress_level": 0.4, "risk_category": "low" }
-        System Status
+ System Status
+ 
                  GET /api/health
                 Response: { "status": "healthy", "services": ["voice", "text", "stress"] }
         Web Dashboard Endpoints
@@ -113,17 +119,17 @@ The SENTIO dashboard provides a comprehensive interface for emotional analysis:
 
 Features
 
- - Real-time emotion monitoring
+           - Real-time emotion monitoring
 
-- Voice recording and analysis
+           - Voice recording and analysis
 
-- Text sentiment input
+          - Text sentiment input
 
-- Stress level tracking
+           - Stress level tracking
 
-- Emotional timeline charts
+         -  Emotional timeline charts
 
-- System performance metrics
+        - System performance metrics
 
        Access
                  http://localhost:8000
@@ -141,98 +147,103 @@ Features
 
 Pre-trained Models
 
-- Voice Emotion Classifier: Random Forest (5 features)
+              - Voice Emotion Classifier: Random Forest (5 features)
 
-- Text Sentiment Analyzer: Logistic Regression (4 features)
+               - Text Sentiment Analyzer: Logistic Regression (4 features)
 
-- Stress Predictor: Random Forest Regressor (6 features)
+              - Stress Predictor: Random Forest Regressor (6 features)
 
-- Feature Engineering
+           - Feature Engineering
 
-- Audio Features: MFCC, spectral contrast, chroma, energy, ZCR
+                - Audio Features: MFCC, spectral contrast, chroma, energy, ZCR
 
-- Text Features: VADER sentiment, TextBlob, readability, word statistics
+          - Text Features: VADER sentiment, TextBlob, readability, word statistics
 
-- Temporal Features: Emotional volatility, trends, patterns
+              - Temporal Features: Emotional volatility, trends, patterns
 
 🔧 Configuration
-Environment Variables
+
+             Environment Variables
             export SENTIO_MODELS_DIR="emotional_models"
-export SENTIO_LOG_LEVEL="INFO"
-export SENTIO_API_PORT=5000
-export SENTIO_DASHBOARD_PORT=8000
+            export SENTIO_LOG_LEVEL="INFO"
+                     export SENTIO_API_PORT=5000
+             export SENTIO_DASHBOARD_PORT=8000
 
 Customization
 
-Edit config/settings.py to modify:
+        Edit config/settings.py to modify:
 
-Model parameters
+            Model parameters
 
-Feature extraction settings
+               Feature extraction settings
 
-Coaching responses
+          Coaching responses
 
-UI themes
+           UI themes
 
 🚀 Deployment
-        python main.py
-Production with Gunicorn
+
+    python main.py
+          Production with Gunicorn
            gunicorn -w 4 -b 0.0.0.0:5000 interfaces.api_gateway:app
-gunicorn -w 2 -b 0.0.0.0:8000 interfaces.web_dashboard:app
+        gunicorn -w 2 -b 0.0.0.0:8000 interfaces.web_dashboard:app
 
 📈 Performance
 
-Voice Analysis: < 200ms response time
+            Voice Analysis: < 200ms response time
 
-Text Analysis: < 50ms response time
+            Text Analysis: < 50ms response time
 
-Stress Prediction: < 100ms response time
+              Stress Prediction: < 100ms response time
 
-Model Accuracy: 75-85% on emotional categories
+          Model Accuracy: 75-85% on emotional categories
 
-Concurrent Users: 100+ simultaneous sessions
+            Concurrent Users: 100+ simultaneous sessions
 
-🔮 Future Features
-Mobile app (iOS/Android)
+🔮 Future Feature
+ 
+          Mobile app (iOS/Android)
 
-Multi-language support
+         Multi-language support
 
-Advanced emotion detection (facial analysis)
+              Advanced emotion detection (facial analysis)
 
-Group emotion analytics
+          Group emotion analytics
 
-Predictive mood forecasting
+              Predictive mood forecasting
 
-Integration with health apps
-
-Voice personality adaptation
+              Integration with health apps
+ 
+            Voice personality adaptation
 
 🤝 Contributing
-We welcome contributions! Please see our Contributing Guide for details.
 
-Fork the repository
+              We welcome contributions! Please see our Contributing Guide for details.
 
-Create a feature branch (git checkout -b feature/amazing-feature)
+             Fork the repository
 
-Commit your changes (git commit -m 'Add amazing feature')
+             Create a feature branch (git checkout -b feature/amazing-feature)
 
-Push to the branch (git push origin feature/amazing-feature)
+             Commit your changes (git commit -m 'Add amazing feature')
 
-Open a Pull Request
+           Push to the branch (git push origin feature/amazing-feature)
+
+              Open a Pull Request
 
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 🙏 Acknowledgments
-Librosa for audio feature extraction
 
-Scikit-learn for machine learning models
+               Librosa for audio feature extraction
 
-Flask for web framework
+              Scikit-learn for machine learning models
 
-NLTK and TextBlob for NLP capabilities
+             Flask for web framework
 
-The emotional AI research community
+             NLTK and TextBlob for NLP capabilities
+
+           The emotional AI research community
 
 
 
@@ -244,5 +255,5 @@ SENTIO - Understanding emotions, empowering lives 🎭
 https://img.shields.io/twitter/follow/sentio_ai?style=social
 https://img.shields.io/github/stars/yourusername/sentio?style=social
 
-</div> ```
+</div> 
        
